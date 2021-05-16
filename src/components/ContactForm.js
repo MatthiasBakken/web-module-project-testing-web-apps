@@ -75,42 +75,46 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+            data-testid="firstName"
             onChange={handleChange}
             name="firstName"
             value={form.firstName}
             id="firstName"
             placeholder="Edd"
           />
-          {(errors.firstName) && <p data-testid="error">Error: {errors.firstName}</p>}
+          {(errors.firstName) && <p data-testid="error-firstName">Error: {errors.firstName}</p>}
         </div>
 
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
+            data-testid="lastName"
             onChange={handleChange}
             id="lastName"
             name="lastName"
             value={form.lastName}
             placeholder="Burke"
           />
-          {(errors.lastName) && <p data-testid="error">Error: {errors.lastName}</p>}
+          {(errors.lastName) && <p data-testid="error-lastName">Error: {errors.lastName}</p>}
         </div>
 
         <div>
           <label htmlFor="email">Email*</label>
-          <input 
+          <input
+            data-testid="email"
             onChange={handleChange}
             id="email"
             name="email" 
             value={form.email}
             placeholder="bluebill1049@hotmail.com"
           />
-          {(errors.email) && <p data-testid="error">Error: {errors.email}</p>}
+          {(errors.email) && <p data-testid="error-email">Error: {errors.email}</p>}
         </div>
 
         <div>
           <label htmlFor="message">Message</label>
           <textarea
+            data-testid="message"
             onChange={handleChange}
             name="message"
             id="message"
@@ -121,7 +125,7 @@ const ContactForm = () => {
 
         {displayData && <DisplayComponent form={form}/>}
 
-        <input type="submit" />
+        <input data-testid="submit" type="submit" />
       </form>
     </div>
   );
